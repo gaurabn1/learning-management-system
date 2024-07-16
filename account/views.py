@@ -2,12 +2,9 @@ from django.shortcuts import render, redirect
 from account.forms import CustomUserForm, UserLoginForm
 from account.models import CustomUser
 from django.contrib.auth import authenticate, login as auth_login
-from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required
-def index(request):
-    return render(request, 'index.html')
+
 
 def login(request):
     form  = UserLoginForm()
