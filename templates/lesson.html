@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Lessons categories </h1>
+{% for lesson in lessons %}
+  <h1>{{lesson.course}}</h1>
+  <h1>{{lesson.title}}</h1>
+
+{% endfor %}
+
+
+{% endblock %}
