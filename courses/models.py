@@ -18,7 +18,7 @@ class Lesson(models.Model):
     content = models.TextField()
 
     def __str__(self):
-        return self.title
+        return f'{self.title} - {self.course}'
 
 
 class Enrollment(models.Model):
