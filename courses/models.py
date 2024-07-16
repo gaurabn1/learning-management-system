@@ -13,7 +13,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-    course = models.ForeignKey(Course, models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     content = models.TextField()
 
@@ -22,8 +22,8 @@ class Lesson(models.Model):
 
 
 class Enrollment(models.Model):
-    user = models.ForeignKey(CustomUser, models.CASCADE)
-    course = models.ForeignKey(Course, models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     enrolled_at = models.DateTimeField()
 
     def __str__(self):
