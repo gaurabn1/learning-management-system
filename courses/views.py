@@ -6,10 +6,10 @@ from .models import Course
 
 @login_required
 def index(request):
-  
     courses = Course.objects.all()
     print(courses)
     context = {
         "courses" :courses,
+        'categories' : response
     }
     return render(request,'index.html',context)
