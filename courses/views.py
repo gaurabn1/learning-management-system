@@ -10,6 +10,5 @@ def index(request):
     print(courses)
     context = {
         "courses" :courses,
-        'categories' : response
     }
     return render(request,'index.html',context)
