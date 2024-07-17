@@ -11,8 +11,8 @@
   <hr>
   <div class="d-flex gap-4">
     {% for course in courses %}
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="{{course.course_img.url}}" alt="Card image cap">
+    <div class=" course-card card">
+      <img class="card-img-top" src="{{course.course_img.url}}" alt="Card image cap" height="350px">
       <div class="card-body">
         <h5 class="card-title">{{course.title}}</h5>
         <p class="card-text">{{course.description}}</p>
