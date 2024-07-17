@@ -1,4 +1,28 @@
-<h2>Index</h2>
-{% for course in courses %}
-  <h1>{{course}}</h1>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Navbar -->
+{% include 'navbar.html' %}
+<!-- Navbar End -->
+
+<!-- Courses -->
+<div class="my-4">
+  <h2>Courses</h2>
+  <hr>
+  <div class="d-flex gap-4">
+    {% for course in courses %}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{course.course_img.url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <p class="card-text">{{course.description}}</p>
+        <a href="#" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+<!-- Courses End -->
+
+{% endblock %}
