@@ -18,7 +18,7 @@
     - On Windows:
 
         ```bash
-        venv\Scripts\activate
+        .\venv\Scripts\activate.ps1
         ```
 
     - On Unix or MacOS:
