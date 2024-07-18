@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark my-2">
+    <a class="navbar-brand mx-2" href="{% url 'index' %}">LMS</a>
+
+
+        <ul class="navbar-nav mr-auto d-flex flex-row gap-2">
+            <li class="nav-item active">
+                <a class="nav-link active" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Courses</a>
+            </li>
+        </ul>
+        <div class="d-flex align-items-center">
+            <form action="{% url 'index' %}" method="get" class="form-inline m-2 my-lg-0 d-flex gap-2">
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search Courses" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            {% if user == request.user %}
+            <a href="{% url 'logout' %}" class="btn btn-danger mx-2" id="logout">logout</a>
+            {% endif %}
+        </div>
+</nav>

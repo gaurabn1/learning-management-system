@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Navbar -->
+{% include 'navbar.html' %}
+<!-- Navbar End -->
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'error' %}
+<div class="alert alert-danger" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" onclick="closeButton(this)">&times;</span>
+</button>
+  {{ message }}
+</div>
+{% else %}
+<div class="alert alert-{{message.tags}}" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" onclick="closeButton(this)">&times;</span>
+</button>
+  {{ message }}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+<!-- Courses -->
+<div class="my-4">
+  <h2>Courses</h2>
+  <hr>
+  <div class="d-flex gap-4">
+    {% for course in courses %}
+    <div class=" course-card card">
+      <img class="card-img-top" src="{{course.course_img.url}}" alt="Card image cap" height="350px">
+      <div class="card-body">
+        <h5 class="card-title">{{course.title}}</h5>
+        <p class="card-text">{{course.description}}</p>
+        <a href="#" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+<!-- Courses End -->
+
+{% endblock %}
